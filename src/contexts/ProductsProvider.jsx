@@ -16,10 +16,11 @@ function stripCategories(products) {
 
 function ProductsProvider({ children }) {
   const [loading, setLoading] = React.useState(false);
-  const [products, setProducts] = React.useState([]);
-  const [categories, setCategories] = React.useState([]);
   const [data, setData] = React.useState('');
+
+  const [products, setProducts] = React.useState([]);
   const [search, setSearch] = React.useState('');
+  const [categories, setCategories] = React.useState([]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -46,7 +47,7 @@ function ProductsProvider({ children }) {
     setCategories(() => stripCategories(filteredData));
   };
 
-  const value = { products, loading, setSearch };
+  const value = { products, categories, loading, setSearch };
 
   return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 }
