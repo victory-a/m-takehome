@@ -9,9 +9,12 @@
   }
 }
 
-.search {
+.filters {
   margin: 0 auto;
   margin-bottom: 1rem;
   width: 95%;
-  max-width: 350px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.6rem;
 }

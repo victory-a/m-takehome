@@ -6,3 +6,11 @@
   width: 100%;
   height: 40px;
 }
+
+.selectInput {
+  border: 1px solid $secondary;
+  text-indent: 1rem;
+  width: 100%;
+  height: 40px;
+  text-transform: capitalize;
+}
