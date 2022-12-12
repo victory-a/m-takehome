@@ -1,9 +1,17 @@
 .app {
   margin-top: 1rem;
+  text-align: center;
 
   h1 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2.5rem;
   }
+}
+
+.search {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  width: 95%;
+  max-width: 350px;
 }
