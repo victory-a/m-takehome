@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './app.module.scss';
 import Button from './components/FormElelments/Button';
 import SelectInput from './components/FormElelments/SelectInput.jsx';
-// import TextInput from './components/FormElelments/Textinput.jsx';
+import TextInput from './components/FormElelments/Textinput.jsx';
 import ProductList from './components/ProductsList/ProductList.jsx';
 import { useProducts, fieldTypes, sortOptions } from './contexts/ProductsProvider';
 
@@ -32,7 +32,7 @@ function App() {
       <h1>Products Catalogue</h1>
 
       <div className={styles.filters}>
-        {/* <TextInput value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for products' /> */}
+        <TextInput value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for products' />
         <SelectInput value={selectedCategory} onChange={handleSelect} options={categories} name='filterByType' defaultOption='all' />
         <SelectInput
           value={sortBy}
