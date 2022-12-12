@@ -34,7 +34,13 @@ function App() {
       <div className={styles.filters}>
         <TextInput value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search for products' />
         <SelectInput value={selectedCategory} onChange={handleSelect} options={categories} name='filterByType' defaultOption='all' />
-        <SelectInput value={sortBy} onChange={handleSortByPrice} options={Object.keys(sortOptions)} name='filterByPrice' defaultOption='none' />
+        <SelectInput
+          value={sortBy}
+          onChange={handleSortByPrice}
+          options={Object.keys(sortOptions)}
+          name='filterByPrice'
+          defaultOption='Sort by price'
+        />
         <Button onClick={handleReset}>Reset Filters</Button>
       </div>
 
