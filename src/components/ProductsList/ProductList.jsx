@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import styles from './productsList.module.scss';
 
-const Productlist = ({ products }) => {
+const ProductList = ({ products }) => {
   if (!products) return null;
 
   return (
@@ -16,4 +16,4 @@ const Productlist = ({ products }) => {
   );
 };
 
-export default Productlist;
+export default ProductList;
