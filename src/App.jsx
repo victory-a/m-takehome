@@ -4,7 +4,9 @@ import ProductList from './components/ProductsList/ProductList.jsx';
 import { useProducts } from './contexts/ProductsProvider';
 
 function App() {
-  const { products } = useProducts();
+  const { products, loading } = useProducts();
+
+  if (loading) return <p>fetching products ...</p>;
 
   return (
     <div className={styles.app}>
