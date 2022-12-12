@@ -96,7 +96,6 @@ function ProductsProvider({ children }) {
   }
 
   const resetFilters = () => {
-    console.log('clicked');
     setFilters(defaultFilterState);
   };
 
