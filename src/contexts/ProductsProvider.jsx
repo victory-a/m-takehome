@@ -14,12 +14,15 @@ function stripCategories(products) {
   return categories;
 }
 
-export const fieldTypes = { categories: 'categories' };
+export const sortOptions = { ascending: 'ascending', descending: 'descending' };
+export const fieldTypes = { categories: 'categories', price: 'price' };
+
+const defaultFilterState = { categories: undefined, price: undefined };
 
 function ProductsProvider({ children }) {
   const [loading, setLoading] = React.useState(false);
   const [data, setData] = React.useState('');
-  const [filters, setFilters] = React.useState({ categories: undefined });
+  const [filters, setFilters] = React.useState({});
 
   const [products, setProducts] = React.useState([]);
   const [search, setSearch] = React.useState('');
@@ -60,6 +63,15 @@ function ProductsProvider({ children }) {
           break;
         }
 
+        case fieldTypes.price: {
+          const value = filters[field];
+          if (value === sortOptions.ascending) {
+            filteredData = filteredData.sort((a, b) => Number(a.price) - Number(b.price));
+          } else if (value === sortOptions.descending) {
+            filteredData = filteredData.sort((a, b) => Number(b.price) - Number(a.price));
+          }
+        }
+
         default:
           break;
       }
@@ -83,7 +95,12 @@ function ProductsProvider({ children }) {
     setFilters(newFilters);
   }
 
-  const value = { products, categories, search, loading, setSearch, addFilter, removeFilter };
+  const resetFilters = () => {
+    console.log('clicked');
+    setFilters(defaultFilterState);
+  };
+
+  const value = { products, categories, search, loading, setSearch, addFilter, removeFilter, resetFilters };
 
   return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 }

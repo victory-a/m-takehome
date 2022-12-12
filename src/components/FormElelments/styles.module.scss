@@ -14,3 +14,12 @@
   height: 40px;
   text-transform: capitalize;
 }
+
+.button {
+  border: 1px solid $secondary;
+  appearance: none;
+  background-color: $white;
+  color: $red;
+  height: 40px;
+  cursor: pointer;
+}

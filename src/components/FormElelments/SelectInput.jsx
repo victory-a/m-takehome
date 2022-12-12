@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const SelectInput = ({ options = [], onChange, ...props }) => {
+const SelectInput = ({ options = [], defaultOption, onChange, ...props }) => {
   return (
     <select className={styles.selectInput} onChange={onChange} {...props}>
-      <option value=''>All</option>
+      {defaultOption && <option value=''>{defaultOption}</option>}
       {options.map((option, i) => (
         <option value={option} key={`options-${i}`}>
           {option}
