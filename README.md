@@ -1,6 +1,6 @@
 #   Frontend Skill Assessment 
 
-[Live url](https://nasa-plus-imdb.netlify.app/)
+[Live url](https://m-takehome.netlify.app/)
 
 ## Instructions  
 To run the project;
